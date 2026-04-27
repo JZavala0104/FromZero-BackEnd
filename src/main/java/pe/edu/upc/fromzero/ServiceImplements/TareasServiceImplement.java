@@ -1,0 +1,35 @@
+package pe.edu.upc.fromzero.ServiceImplements;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import pe.edu.upc.fromzero.Entities.Tareas;
+import pe.edu.upc.fromzero.Repositories.ITareasRepository;
+import pe.edu.upc.fromzero.ServiceInterface.ITareasService;
+
+import java.util.List;
+
+@Service
+public class TareasServiceImplement implements ITareasService {
+    @Autowired
+    private ITareasRepository tareasRepository;
+
+    @Override
+    public List<Tareas> GetTarea() {
+        return tareasRepository.findAll();
+    }
+
+    @Override
+    public Tareas InsertTarea(Tareas tarea) {
+        return tareasRepository.save(tarea);
+    }
+
+    @Override
+    public void UpdateTarea(Tareas tarea) {
+        tareasRepository.save(tarea);
+    }
+
+    @Override
+    public void DeleteTarea(int IdTarea) {
+        tareasRepository.deleteById(IdTarea);
+    }
+}

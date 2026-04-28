@@ -7,6 +7,7 @@ import pe.edu.upc.fromzero.Repositories.ITipsIARepository;
 import pe.edu.upc.fromzero.ServiceInterface.ITipsIAService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TipsIAServiceImplement implements ITipsIAService {
@@ -31,5 +32,10 @@ public class TipsIAServiceImplement implements ITipsIAService {
     @Override
     public void DeleteTipsIA(int IdTipsIA) {
         tipsIARepository.deleteById(IdTipsIA);
+    }
+
+    @Override
+    public Optional<TipsIA> GetTipsIAById(int IdTipsIA) {
+        return tipsIARepository.findById(IdTipsIA);
     }
 }

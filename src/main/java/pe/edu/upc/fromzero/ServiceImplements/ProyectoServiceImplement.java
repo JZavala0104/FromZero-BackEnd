@@ -7,6 +7,7 @@ import pe.edu.upc.fromzero.Repositories.IProyectosRepository;
 import pe.edu.upc.fromzero.ServiceInterface.IProyectosService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProyectoServiceImplement implements IProyectosService {
@@ -31,5 +32,10 @@ public class ProyectoServiceImplement implements IProyectosService {
     @Override
     public void DeleteProyecto(int IdProyecto) {
         ProyectosRepository.deleteById(IdProyecto);
+    }
+
+    @Override
+    public Optional<Proyectos> GetProyectoById(int IdProyecto) {
+        return ProyectosRepository.findById(IdProyecto);
     }
 }

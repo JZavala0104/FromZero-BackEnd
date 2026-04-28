@@ -7,6 +7,7 @@ import pe.edu.upc.fromzero.Repositories.IValoracionesRepository;
 import pe.edu.upc.fromzero.ServiceInterface.IValoracionesService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ValoracionesServiceImplement implements IValoracionesService {
@@ -31,5 +32,10 @@ public class ValoracionesServiceImplement implements IValoracionesService {
     @Override
     public void DeleteValoracion(int IdValoracion) {
         valoracionesRepository.deleteById(IdValoracion);
+    }
+
+    @Override
+    public Optional<Valoraciones> GetValoracionById(int IdValoracion) {
+        return valoracionesRepository.findById(IdValoracion);
     }
 }

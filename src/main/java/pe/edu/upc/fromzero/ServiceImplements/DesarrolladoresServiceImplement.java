@@ -7,6 +7,7 @@ import pe.edu.upc.fromzero.Repositories.IDesarrolladoresRepository;
 import pe.edu.upc.fromzero.ServiceInterface.IDesarrolladoresService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DesarrolladoresServiceImplement implements IDesarrolladoresService {
@@ -31,5 +32,10 @@ public class DesarrolladoresServiceImplement implements IDesarrolladoresService 
     @Override
     public void DeleteDesarrollador(int IdDesarrollador) {
         DSRepository.deleteById(IdDesarrollador);
+    }
+
+    @Override
+    public Optional<Desarrolladores> GetDesarrolladorById(int IdDesarrollador) {
+        return DSRepository.findById(IdDesarrollador);
     }
 }

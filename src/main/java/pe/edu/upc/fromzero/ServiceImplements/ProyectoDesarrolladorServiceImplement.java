@@ -7,6 +7,7 @@ import pe.edu.upc.fromzero.Repositories.IProyectoDesarrolladorRepository;
 import pe.edu.upc.fromzero.ServiceInterface.IProyectoDesarrolladorService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProyectoDesarrolladorServiceImplement implements IProyectoDesarrolladorService {
@@ -31,5 +32,10 @@ public class ProyectoDesarrolladorServiceImplement implements IProyectoDesarroll
     @Override
     public void DeleteProyectoDesarrollador(int IdProyDesar) {
         PDRepository.deleteById(IdProyDesar);
+    }
+
+    @Override
+    public Optional<ProyectoDesarrollador> GetProyectoDesarrolladorById(int IdProyDesar) {
+        return PDRepository.findById(IdProyDesar);
     }
 }

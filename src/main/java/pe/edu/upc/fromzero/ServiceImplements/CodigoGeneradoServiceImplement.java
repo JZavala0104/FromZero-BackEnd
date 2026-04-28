@@ -7,6 +7,7 @@ import pe.edu.upc.fromzero.Repositories.ICodigoGeneradoRepository;
 import pe.edu.upc.fromzero.ServiceInterface.ICodigoGeneradoService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CodigoGeneradoServiceImplement implements ICodigoGeneradoService {
@@ -31,5 +32,10 @@ public class CodigoGeneradoServiceImplement implements ICodigoGeneradoService {
     @Override
     public void DeleteCodigoGenerado(int idCodigoGenerado) {
         CGRepository.deleteById(idCodigoGenerado);
+    }
+
+    @Override
+    public Optional<CodigoGenerado> GetCodigoGeneradoById(int idCodigoGenerado) {
+        return CGRepository.findById(idCodigoGenerado);
     }
 }

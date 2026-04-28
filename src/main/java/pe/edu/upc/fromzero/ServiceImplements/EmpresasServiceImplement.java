@@ -6,6 +6,7 @@ import pe.edu.upc.fromzero.Entities.Empresas;
 import pe.edu.upc.fromzero.Repositories.IEmpresasRepository;
 import pe.edu.upc.fromzero.ServiceInterface.IEmpresasService;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmpresasServiceImplement implements IEmpresasService {
@@ -30,5 +31,10 @@ public class EmpresasServiceImplement implements IEmpresasService {
     @Override
     public void DeleteEmpresa(int IdEmpresa) {
         ESRepository.deleteById(IdEmpresa);
+    }
+
+    @Override
+    public Optional<Empresas> GetEmpresaById(int IdEmpresa) {
+        return ESRepository.findById(IdEmpresa);
     }
 }

@@ -7,6 +7,7 @@ import pe.edu.upc.fromzero.Repositories.IRevisionesRepository;
 import pe.edu.upc.fromzero.ServiceInterface.IRevisionesService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RevisionesServiceImplement implements IRevisionesService {
@@ -31,5 +32,10 @@ public class RevisionesServiceImplement implements IRevisionesService {
     @Override
     public void DeleteRevision(int IdRevision) {
         revisionesRepository.deleteById(IdRevision);
+    }
+
+    @Override
+    public Optional<Revisiones> GetRevisionById(int IdRevision) {
+        return revisionesRepository.findById(IdRevision);
     }
 }

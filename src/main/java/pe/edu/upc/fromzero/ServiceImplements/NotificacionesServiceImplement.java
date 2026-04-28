@@ -6,6 +6,7 @@ import pe.edu.upc.fromzero.Entities.Notificaciones;
 import pe.edu.upc.fromzero.Repositories.INotificacionesRepository;
 import pe.edu.upc.fromzero.ServiceInterface.INotificacionesService;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NotificacionesServiceImplement implements INotificacionesService {
@@ -30,5 +31,10 @@ public class NotificacionesServiceImplement implements INotificacionesService {
     @Override
     public void DeleteNotificacion(int IdNotificacion) {
         NSRepository.deleteById(IdNotificacion);
+    }
+
+    @Override
+    public Optional<Notificaciones> GetNotificacionById(int IdNotificacion) {
+        return NSRepository.findById(IdNotificacion);
     }
 }

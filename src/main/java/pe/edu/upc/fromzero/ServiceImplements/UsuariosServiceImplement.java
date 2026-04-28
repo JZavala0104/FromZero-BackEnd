@@ -7,6 +7,7 @@ import pe.edu.upc.fromzero.Repositories.IUsuariosRepository;
 import pe.edu.upc.fromzero.ServiceInterface.IUsuariosService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuariosServiceImplement implements IUsuariosService {
@@ -31,5 +32,10 @@ public class UsuariosServiceImplement implements IUsuariosService {
     @Override
     public void DeleteUsuario(int IdUsuario) {
         usuariosRepository.deleteById(IdUsuario);
+    }
+
+    @Override
+    public Optional<Usuarios> GetUsuarioById(int IdUsuario) {
+        return usuariosRepository.findById(IdUsuario);
     }
 }

@@ -7,6 +7,7 @@ import pe.edu.upc.fromzero.Repositories.ITareasRepository;
 import pe.edu.upc.fromzero.ServiceInterface.ITareasService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TareasServiceImplement implements ITareasService {
@@ -31,5 +32,10 @@ public class TareasServiceImplement implements ITareasService {
     @Override
     public void DeleteTarea(int IdTarea) {
         tareasRepository.deleteById(IdTarea);
+    }
+
+    @Override
+    public Optional<Tareas> GetTareaById(int IdTarea) {
+        return tareasRepository.findById(IdTarea);
     }
 }

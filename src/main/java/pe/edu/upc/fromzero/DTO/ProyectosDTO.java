@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class ProyectosDTO {
     private int idProject;
     private int idEmpresa;
-    private String nombre;
+    private String titulo;
     private String descripcion;
     private double presupuesto;
     private String estado;
@@ -28,12 +28,12 @@ public class ProyectosDTO {
         this.idEmpresa = idEmpresa;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getDescripcion() {

@@ -38,4 +38,9 @@ public class DesarrolladoresServiceImplement implements IDesarrolladoresService 
     public Optional<Desarrolladores> GetDesarrolladorById(int IdDesarrollador) {
         return DSRepository.findById(IdDesarrollador);
     }
+
+    @Override
+    public List<Object[]> GetQuery2() {
+        return DSRepository.getQuery2();
+    }
 }

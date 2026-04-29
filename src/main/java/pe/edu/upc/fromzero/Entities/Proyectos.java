@@ -14,8 +14,8 @@ public class Proyectos {
     @ManyToOne
     @JoinColumn(name = "IdEmpresa")
     private Empresas IdEmpresa;
-    @Column(name = "Nombre",length = 150,nullable = false)
-    private String Nombre;
+    @Column(name = "Titulo",length = 150,nullable = false)
+    private String Titulo;
     @Column(name = "Descripcion",nullable = false)
     private String Descripcion;
     @Column(name = "Presupuesto",nullable = false)
@@ -33,7 +33,7 @@ public class Proyectos {
     public Proyectos(int idProject, Empresas idCompany, String name, String description, double budget, String status, LocalDateTime startDate, LocalDateTime endDate) {
         IdProject = idProject;
         IdEmpresa = idCompany;
-        Nombre = name;
+        Titulo = name;
         Descripcion = description;
         Presupuesto = budget;
         Estado = status;
@@ -57,12 +57,12 @@ public class Proyectos {
         IdEmpresa = idCompany;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public String getTitulo() {
+        return Titulo;
     }
 
-    public void setNombre(String name) {
-        Nombre = name;
+    public void setTitulo(String name) {
+        Titulo = name;
     }
 
     public String getDescripcion() {

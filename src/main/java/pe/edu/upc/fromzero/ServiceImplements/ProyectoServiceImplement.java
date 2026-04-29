@@ -38,4 +38,9 @@ public class ProyectoServiceImplement implements IProyectosService {
     public Optional<Proyectos> GetProyectoById(int IdProyecto) {
         return ProyectosRepository.findById(IdProyecto);
     }
+
+    @Override
+    public List<Object[]> GetQuery1() {
+        return ProyectosRepository.getQuery1();
+    }
 }

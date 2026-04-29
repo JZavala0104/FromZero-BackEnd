@@ -55,13 +55,13 @@ public class ProyectosController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El proyecto no existe");
         }
 
-        if (dto.getNombre() == null || dto.getPresupuesto() < 0) {
+        if (dto.getTitulo() == null || dto.getPresupuesto() < 0) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Datos del proyecto inválidos");
         }
 
         Proyectos p = existente.get();
         // Actualización de campos
-        p.setNombre(dto.getNombre());
+        p.setTitulo(dto.getTitulo());
         p.setDescripcion(dto.getDescripcion());
         p.setPresupuesto(dto.getPresupuesto());
         p.setEstado(dto.getEstado());

@@ -115,6 +115,7 @@ public class QueryController {
     }
 
     @GetMapping("/Query5")
+    @PreAuthorize("hasAnyAuthority('Administrador', 'Moderador', 'Soporte', 'Gerente')")
     public ResponseEntity<?> Query5() {
         List<Object[]> Query5 = NotificacionesService.GetQuery5();
         if (Query5.isEmpty()) {
@@ -132,6 +133,7 @@ public class QueryController {
     }
 
     @GetMapping("/Query6")
+    @PreAuthorize("hasAnyAuthority('Administrador', 'Moderador', 'Soporte', 'Gerente')")
     public ResponseEntity<?> Query6() {
         List<Object[]> Query6 = RevisionesService.GetQuery6();
         if (Query6.isEmpty()) {
